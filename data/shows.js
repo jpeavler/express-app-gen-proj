@@ -30,8 +30,34 @@ const updateShow = (req) =>{
     }
     return result;
 }
+const updateShowPortion = (req) =>{
+    const foundIndex = shows.findIndex((element) => req.body.id === element.id);
+    let result;
+    let keyArray = [];
+    if(foundIndex == -1){
+        result = {error: "No show with that id exists." };
+    }else{
+        keyArray = Object.keys(req.body);
+        keyArray.forEach((element) => shows[foundIndex][element] = req.body[element]);
+        result = shows[foundIndex];
+    }
+    return result;
+}
+const removeShow = (req) =>{
+    const foundIndex = shows.findIndex((element) => req.body.id === element.id);
+    let result;
+    if(foundIndex == -1){
+        result = {error: "Id not found"};
+    }else{
+        result = shows[foundIndex];
+        shows.splice(foundIndex,1);
+    }
+    return result;
+}
 module.exports = {
     getShows,
     addShow,
-    updateShow
+    updateShow,
+    updateShowPortion,
+    removeShow
 };

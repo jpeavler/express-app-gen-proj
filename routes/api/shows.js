@@ -20,4 +20,13 @@ router.put('/', function(req, res, next) {
   res.send(results);
 })
 
+router.patch('/', function(req, res, next) {
+  const results = shows.updateShowPortion(req);
+  res.send(results);
+})
+
+router.delete('/', function(req, res, next) {
+  const results = shows.removeShow(req);
+  res.send(results);
+})
 module.exports = router;
