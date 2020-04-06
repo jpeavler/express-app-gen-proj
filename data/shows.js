@@ -46,8 +46,8 @@ const updateShowPortion = (req) =>{
     }
     return result;
 }
-const removeShow = (req) =>{
-    const foundIndex = shows.findIndex((element) => req.body.id === element.id);
+const removeShow = (id) =>{
+    const foundIndex = shows.findIndex((element) => id == element.id);
     let result;
     if(foundIndex == -1){
         result = {error: "Id not found"};

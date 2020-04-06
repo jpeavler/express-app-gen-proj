@@ -25,8 +25,8 @@ router.patch('/', function(req, res, next) {
   res.send(results);
 })
 
-router.delete('/', function(req, res, next) {
-  const results = shows.removeShow(req);
+router.delete('/:id', function(req, res, next) {
+  const results = shows.removeShow(req.params.id);
   res.send(results);
 })
 module.exports = router;
