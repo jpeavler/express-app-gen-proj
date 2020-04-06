@@ -16,6 +16,16 @@
             <li>Number of Seasons : <%= data[i].numSeasons %></li>
         <% } %>
     </ul>
+    <p>Add your own show</p>
+    <form class='post'>
+      <label for="title">Show Title: </label>
+      <input type="text" id="title" name="title">
+      <label for="numSeasons">Number of Seasons: </label>
+      <input type="text" id="numSeasons" name="numSeasons">
+      <label for="desc">Show Description: </label>
+      <input type="text" id="desc" name="desc">
+      <input type="submit" id ='submit' value="Submit">
+    </form>
   </body>
   <script src='/javascripts/shows.js'></script>
 </html>
