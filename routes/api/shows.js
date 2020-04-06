@@ -6,14 +6,18 @@ const shows = require('../../data/shows');
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
-  res.send(shows);
+  const results = shows.getShows();
+  res.send(results);
 });
 
 router.post('/', function(req, res, next) {
-    const body = req.body;
-    body.id = ++index;
-    shows.push(body);
-    res.send(body);
+  const results = shows.addShow(req);  
+  res.send(results);
+})
+
+router.put('/', function(req, res, next) {
+  const results = shows.updateShow(req);
+  res.send(results);
 })
 
 module.exports = router;

@@ -8,7 +8,7 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/shows', function(req, res, next) {
-  res.render('shows', { title: 'Shows', data: shows });
+  res.render('shows', { title: 'Shows', data: shows.getShows() });
 })
 
 
