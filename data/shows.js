@@ -3,7 +3,7 @@ const shows = [
         id: 1,
         title: "Columbo",
         numSeasons: 10,
-        desc: "Show about solving cases by playing dumb."
+        desc: "Detective solves cases by asking for one more thing."
     }
 ];
 let index = 1;
@@ -23,7 +23,10 @@ const updateShow = (req) =>{
     if(foundIndex == -1){
         shows.push(req.body);
         req.body.id = ++index;
-        result = {notice: "No show with that id exists, created new show."}
+        result = {
+            notice: "No show with that id exists, created new show.",
+            object: req.body
+        }
     }else{
         shows.fill(req.body, foundIndex, foundIndex +1);
         result = shows[foundIndex];
