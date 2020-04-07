@@ -19,12 +19,12 @@
     <p>Add your own show</p>
     <form class='post'>
       <label for="title">Show Title: </label>
-      <input type="text" id="title" name="title">
+      <input type="text" id="title" name="title" required>
       <label for="numSeasons">Number of Seasons: </label>
-      <input type="text" id="numSeasons" name="numSeasons">
+      <input type="number" id="numSeasons" name="numSeasons" required>
       <label for="desc">Show Description: </label>
-      <input type="text" id="desc" name="desc">
-      <input type="submit" id ='submit' value="Submit">
+      <input type="text" id="desc" name="desc" required>
+      <input type="submit" id ='submit' value="Add Show">
     </form>
   </body>
   <script src='/javascripts/shows.js'></script>
